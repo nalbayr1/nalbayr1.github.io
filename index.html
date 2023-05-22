@@ -193,24 +193,39 @@
       <div class="project">
         <h3>Project 1</h3>
         <p>Social Media app that allows users to view data and communicate with each other</p>
+        <button class="like-button">Like</button>
+        <span class="like-counter">0</span>
       </div>
+      
       <div class="project">
         <h3>Project 2</h3>
         <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
+        <button class="like-button">Like</button>
+        <span class="like-counter">0</span>
       </div>
     </section>
-  </div>
+</div>
 
-  <script>
-    // Select all like buttons
-    const likeButtons = document.querySelectorAll('.like-button');
-  
-    // Add click event listener to each like button
-    likeButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('liked');
-      });
+<script>
+  // Select all like buttons
+  const likeButtons = document.querySelectorAll('.like-button');
+
+  // Add click event listener to each like button
+  likeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('liked');
+
+      // Find the corresponding like counter element
+      const counter = button.nextElementSibling;
+
+      // Update the like count based on the button's state
+      if (button.classList.contains('liked')) {
+        counter.textContent = parseInt(counter.textContent) + 1;
+      } else {
+        counter.textContent = parseInt(counter.textContent) - 1;
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
