@@ -121,6 +121,18 @@
     .project .like-button.liked {
       background-color: #f44336;
     }
+    .project .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .project .image-container img {
+      margin: 0 10px;
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -192,7 +204,32 @@
       <h2>Projects</h2>
       <div class="project">
         <h3>Project 1</h3>
-        <p>Social Media app that allows users to view data and communicate with each other</p>
+        <div class="project-description">
+          <p>Social Media app that allows users to view data and communicate with each other</p>
+          <div class="bullet-points">
+            <h4>Motivation</h4>
+            <ul>
+              <li>Better gauge of performance in armor ceramics</li>
+              <li>Projectile depth affected by rapid granular flow</li>
+              <li>Understand rearrangement of particles in a rapid granular flow</li>
+              <li>Analyze force networks at different time steps</li>
+            </ul>
+          </div>
+        </div>
+        <div class="image-gallery">
+          <div class="image">
+            <img src="photo1.jpg" alt="Photo 1">
+            <span class="image-name">Photo 1</span>
+          </div>
+          <div class="image">
+            <img src="photo2.jpg" alt="Photo 2">
+            <span class="image-name">Photo 2</span>
+          </div>
+          <div class="image">
+            <img src="photo3.jpg" alt="Photo 3">
+            <span class="image-name">Photo 3</span>
+          </div>
+        </div>
         <button class="like-button">Like</button>
         <span class="like-counter">38</span>
       </div>
@@ -204,28 +241,28 @@
         <span class="like-counter">16</span>
       </div>
     </section>
-</div>
+  </div>
 
-<script>
-  // Select all like buttons
-  const likeButtons = document.querySelectorAll('.like-button');
+  <script>
+    // Select all like buttons
+    const likeButtons = document.querySelectorAll('.like-button');
 
-  // Add click event listener to each like button
-  likeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.classList.toggle('liked');
+    // Add click event listener to each like button
+    likeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('liked');
 
-      // Find the corresponding like counter element
-      const counter = button.nextElementSibling;
+        // Find the corresponding like counter element
+        const counter = button.nextElementSibling;
 
-      // Update the like count based on the button's state
-      if (button.classList.contains('liked')) {
-        counter.textContent = parseInt(counter.textContent) + 1;
-      } else {
-        counter.textContent = parseInt(counter.textContent) - 1;
-      }
+        // Update the like count based on the button's state
+        if (button.classList.contains('liked')) {
+          counter.textContent = parseInt(counter.textContent) + 1;
+        } else {
+          counter.textContent = parseInt(counter.textContent) - 1;
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
