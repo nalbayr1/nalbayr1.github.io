@@ -146,7 +146,9 @@
     }
     .slide img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
     }
     .prev,
     .next {
@@ -258,19 +260,15 @@
         <div class="slideshow-container">
           <div class="slide">
             <img src="photo4.png" alt="Photo 4">
-            <span class="image-name">Photo 4</span>
           </div>
           <div class="slide">
             <img src="photo1.png" alt="Photo 1">
-            <span class="image-name">Photo 1</span>
           </div>
           <div class="slide">
             <img src="photo2.png" alt="Photo 2">
-            <span class="image-name">Photo 2</span>
           </div>
           <div class="slide">
             <img src="photo3.png" alt="Photo 3">
-            <span class="image-name">Photo 3</span>
           </div>
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -289,18 +287,6 @@
               <li>Payment integration with Stripe</li>
             </ul>
           </div>
-        </div>
-        <div class="slideshow-container">
-          <div class="slide">
-            <img src="photo5.png" alt="Photo 5">
-            <span class="image-name">Photo 5</span>
-          </div>
-          <div class="slide">
-            <img src="photo6.png" alt="Photo 6">
-            <span class="image-name">Photo 6</span>
-          </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
       </div>
     </section>
