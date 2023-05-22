@@ -4,6 +4,43 @@
   <title>My Portfolio</title>
   <style>
     /* Global Styles */
+    /* ... Existing CSS code ... */
+
+    /* Slideshow Styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .slideshow-container .slide {
+      display: none;
+      text-align: center;
+    }
+    .slideshow-container .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .slideshow-container .prev,
+    .slideshow-container .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .slideshow-container .prev {
+      left: 10px;
+    }
+    .slideshow-container .next {
+      right: 10px;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -73,66 +110,8 @@
       text-decoration: none;
       border-radius: 4px;
     }
-    
-    /* Fun Resume Styles */
-    .fun-facts {
-      margin-bottom: 20px;
-      padding: 20px;
-      background-color: #f5f5f5;
-      border-radius: 8px;
-    }
-    .fun-facts h3 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .fun-facts p {
-      color: #777;
-    }
 
-    /* Project Styles */
-    .project {
-      margin-bottom: 20px;
-      padding: 20px;
-      background-color: #f5f5f5;
-      border-radius: 8px;
-    }
-    .project h3 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .project p {
-      color: #777;
-    }
-    .project .like-button {
-      display: inline-block;
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-left: 10px;
-    }
-    .project .like-button:hover {
-      background-color: #555;
-    }
-    .project .like-button.liked {
-      background-color: #f44336;
-    }
-    .project .image-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .project .image-container img {
-      margin: 0 10px;
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
+
   </style>
 </head>
 <body>
@@ -147,7 +126,55 @@
       <a href="#projects">Projects</a>
     </nav>
     <section id="resume" class="resume-section">
-      <!-- Resume section content -->
+      <h2>Resume</h2>
+      <div class="resume-download">
+        <a href="Nahuel Albayrak Resume_2023.pdf" target="_blank" download>Download Resume</a>
+      </div>
+      <div class="fun-facts">
+        <h3>Contact Me</h3>
+        <p>Email: nalbayr1@jhu.edu</p>
+        <p>Phone: (410) 903 8698</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nahuel-albayrak-0356bb254/" target="_blank">nahuel-albayrak</a></p>
+      </div>
+      <div class="fun-facts">
+        <h3>Education</h3>
+        <p><strong>Johns Hopkins University (2025)</strong></p>
+        <p>BS Computer Science, minor in Applied Mathematics and Statistics</p>
+        <p>GPA: 3.2</p>
+        <p>Classes: Linear Algebra, Gateway to Python, Intermediate Programming (C, C++), Data Structures (Java)</p>
+        <p><strong>Chesapeake Science Point HS (2021)</strong></p>
+        <p>Weighted GPA: 4.33, Unweighted GPA: 3.87</p>
+        <p>STEM Academy, Applied Physics Laboratory, JHU</p>
+        <p>Completed 3 semester courses in Python and Cybersecurity</p>
+      </div>
+      <div class="fun-facts">
+        <h3>Internships/Programs</h3>
+        <p>(Summer 2021 and 2020)</p>
+        <p>Presented individual research to Army Education Outreach Program leadership</p>
+        <p><strong>Internship - Johns Hopkins Applied Physics Laboratory</strong></p>
+        <p>(Fall Semester 2020) Applied</p>
+        <p>(Summer 2019) C</p>
+        <p><strong>SAME CAMP (Society of American Military Engineers)</strong></p>
+        <p>(Summer 2019)</p>
+      </div>
+      <div class="fun-facts">
+        <h3>Skills</h3>
+        <p>Programming Skills: C, C++, Python, Java</p>
+        <p>Technologies: Github, Docker, TensorFlow, OpenCV, NetworkX</p>
+        <p>Communication: Collaborated on professional projects, took public speaking classes, and presented research</p>
+      </div>
+      <div class="fun-facts">
+        <h3>Research Publications/Conferences</h3>
+        <p>2021 Physical Review: "Quantifying local rearrangements in three-dimensional granular materials"</p>
+        <p>2020 IEEE Integrated STEM Education Conference (ISEC), Princeton University: "Object Detection and Machine Learning". Poster award. Abstract published at the IEEE archives.</p>
+        <p>Regional Science Fair (2015-2021): Participated every year. 2019 Encryption and Steganography, 2020 Object Detection and Machine Learning. Both 1st places in the category Systems Software and awards from the Naval Research Laboratory and the Armed Forces Communications and Electronics Association.</p>
+      </div>
+      <div class="fun-facts">
+        <h3>Other Activities</h3>
+        <p>Club Soccer, JHU (2021 to now)</p>
+        <p>Robotics Team (2015 – 2021)</p>
+        <p>Bridge Building Club (2019 – 2021), team co-captain. 1st place AASHTO Maryland State Competition.</p>
+      </div>
     </section>
     <div class="resume-download">
       <a href="Nahuel Albayrak Resume_2023.pdf" target="_blank" download>Download Resume</a>
@@ -157,58 +184,113 @@
       <div class="project">
         <h3>Project 1</h3>
         <div class="project-description">
-          <!-- Project description content -->
+          <p>Social Media app that allows users to view data and communicate with each other</p>
+          <div class="bullet-points">
+            <h4>Motivation</h4>
+            <ul>
+              <li>Better gauge of performance in armor ceramics</li>
+              <li>Projectile depth affected by rapid granular flow</li>
+              <li>Understand rearrangement of particles in a rapid granular flow</li>
+              <li>Analyze force networks at different time steps</li>
+            </ul>
+          </div>
         </div>
         <div class="image-gallery">
-          <div class="image">
-            <img src="photo4.png" alt="Photo 4">
-            <span class="image-name">Photo 4</span>
+          <div class="slideshow-container">
+            <div class="slide">
+              <img src="photo4.png" alt="Photo 4">
+              <span class="image-name">Photo 4</span>
+            </div>
+            <div class="slide">
+              <img src="photo1.png" alt="Photo 1">
+              <span class="image-name">Photo 1</span>
+            </div>
+            <div class="slide">
+              <img src="photo2.png" alt="Photo 2">
+              <span class="image-name">Photo 2</span>
+            </div>
+            <div class="slide">
+              <img src="photo3.png" alt="Photo 3">
+              <span class="image-name">Photo 3</span>
+            </div>
           </div>
-          <div class="image">
-            <img src="photo1.png" alt="Photo 1">
-            <span class="image-name">Photo 1</span>
-          </div>
-          <div class="image">
-            <img src="photo2.png" alt="Photo 2">
-            <span class="image-name">Photo 2</span>
-          </div>
-          <div class="image">
-            <img src="photo3.png" alt="Photo 3">
-            <span class="image-name">Photo 3</span>
-          </div>
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
         </div>
         <button class="like-button">Like</button>
         <span class="like-counter">38</span>
       </div>
-      
+
       <div class="project">
         <h3>Project 2</h3>
-        <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
+        <div class="project-description">
+          <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
+          <button class="like-button">Like</button>
+          <span class="like-counter">16</span>
+        </div>
+        <div class="image-gallery">
+          <div class="slideshow-container">
+            <div class="slide">
+              <img src="photo5.png" alt="Photo 5">
+              <span class="image-name">Photo 5</span>
+            </div>
+            <div class="slide">
+              <img src="photo6.png" alt="Photo 6">
+              <span class="image-name">Photo 6</span>
+            </div>
+            <div class="slide">
+              <img src="photo7.png" alt="Photo 7">
+              <span class="image-name">Photo 7</span>
+            </div>
+            <div class="slide">
+              <img src="photo8.png" alt="Photo 8">
+              <span class="image-name">Photo 8</span>
+            </div>
+          </div>
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
+        </div>
         <button class="like-button">Like</button>
-        <span class="like-counter">16</span>
+        <span class="like-counter">22</span>
       </div>
     </section>
   </div>
 
+  <!-- JavaScript for Slideshow -->
   <script>
-    // Select all like buttons
-    const likeButtons = document.querySelectorAll('.like-button');
+    var slideIndex = 0;
+    showSlides();
 
-    // Add click event listener to each like button
-    likeButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('liked');
+    function showSlides() {
+      var slides = document.getElementsByClassName("slide");
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
 
-        // Find the corresponding like counter element
-        const counter = button.nextElementSibling;
+    var prevButton = document.querySelector(".prev");
+    var nextButton = document.querySelector(".next");
 
-        // Update the like count based on the button's state
-        if (button.classList.contains('liked')) {
-          counter.textContent = parseInt(counter.textContent) + 1;
-        } else {
-          counter.textContent = parseInt(counter.textContent) - 1;
-        }
-      });
+    prevButton.addEventListener("click", function () {
+      slideIndex--;
+      if (slideIndex < 1) {
+        slideIndex = slides.length;
+      }
+      showSlides();
+    });
+
+    nextButton.addEventListener("click", function () {
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      showSlides();
     });
   </script>
 </body>
