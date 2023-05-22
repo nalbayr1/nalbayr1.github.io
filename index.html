@@ -4,43 +4,6 @@
   <title>My Portfolio</title>
   <style>
     /* Global Styles */
-    /* ... Existing CSS code ... */
-
-    /* Slideshow Styles */
-    .slideshow-container {
-      position: relative;
-      max-width: 100%;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-    .slideshow-container .slide {
-      display: none;
-      text-align: center;
-    }
-    .slideshow-container .slide img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    .slideshow-container .prev,
-    .slideshow-container .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 30px;
-      font-weight: bold;
-      color: #333;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .slideshow-container .prev {
-      left: 10px;
-    }
-    .slideshow-container .next {
-      right: 10px;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -110,8 +73,66 @@
       text-decoration: none;
       border-radius: 4px;
     }
+    
+    /* Fun Resume Styles */
+    .fun-facts {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+    .fun-facts h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .fun-facts p {
+      color: #777;
+    }
 
-
+    /* Project Styles */
+    .project {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+    .project h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .project p {
+      color: #777;
+    }
+    .project .like-button {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-left: 10px;
+    }
+    .project .like-button:hover {
+      background-color: #555;
+    }
+    .project .like-button.liked {
+      background-color: #f44336;
+    }
+    .project .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .project .image-container img {
+      margin: 0 10px;
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -196,101 +217,51 @@
           </div>
         </div>
         <div class="image-gallery">
-          <div class="slideshow-container">
-            <div class="slide">
-              <img src="photo4.png" alt="Photo 4">
-              <span class="image-name">Photo 4</span>
-            </div>
-            <div class="slide">
-              <img src="photo1.png" alt="Photo 1">
-              <span class="image-name">Photo 1</span>
-            </div>
-            <div class="slide">
-              <img src="photo2.png" alt="Photo 2">
-              <span class="image-name">Photo 2</span>
-            </div>
-            <div class="slide">
-              <img src="photo3.png" alt="Photo 3">
-              <span class="image-name">Photo 3</span>
-            </div>
+          <div class="image">
+            <img src="photo1.png" alt="Photo 1">
+            <span class="image-name">Photo 1</span>
           </div>
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
+          <div class="image">
+            <img src="photo2.png" alt="Photo 2">
+            <span class="image-name">Photo 2</span>
+          </div>
+          <div class="image">
+            <img src="photo3.png" alt="Photo 3">
+            <span class="image-name">Photo 3</span>
+          </div>
         </div>
         <button class="like-button">Like</button>
         <span class="like-counter">38</span>
       </div>
-
+      
       <div class="project">
         <h3>Project 2</h3>
-        <div class="project-description">
-          <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
-          <button class="like-button">Like</button>
-          <span class="like-counter">16</span>
-        </div>
-        <div class="image-gallery">
-          <div class="slideshow-container">
-            <div class="slide">
-              <img src="photo5.png" alt="Photo 5">
-              <span class="image-name">Photo 5</span>
-            </div>
-            <div class="slide">
-              <img src="photo6.png" alt="Photo 6">
-              <span class="image-name">Photo 6</span>
-            </div>
-            <div class="slide">
-              <img src="photo7.png" alt="Photo 7">
-              <span class="image-name">Photo 7</span>
-            </div>
-            <div class="slide">
-              <img src="photo8.png" alt="Photo 8">
-              <span class="image-name">Photo 8</span>
-            </div>
-          </div>
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
-        </div>
+        <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
         <button class="like-button">Like</button>
-        <span class="like-counter">22</span>
+        <span class="like-counter">16</span>
       </div>
     </section>
   </div>
 
-  <!-- JavaScript for Slideshow -->
   <script>
-    var slideIndex = 0;
-    showSlides();
+    // Select all like buttons
+    const likeButtons = document.querySelectorAll('.like-button');
 
-    function showSlides() {
-      var slides = document.getElementsByClassName("slide");
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Change slide every 3 seconds
-    }
+    // Add click event listener to each like button
+    likeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('liked');
 
-    var prevButton = document.querySelector(".prev");
-    var nextButton = document.querySelector(".next");
+        // Find the corresponding like counter element
+        const counter = button.nextElementSibling;
 
-    prevButton.addEventListener("click", function () {
-      slideIndex--;
-      if (slideIndex < 1) {
-        slideIndex = slides.length;
-      }
-      showSlides();
-    });
-
-    nextButton.addEventListener("click", function () {
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      showSlides();
+        // Update the like count based on the button's state
+        if (button.classList.contains('liked')) {
+          counter.textContent = parseInt(counter.textContent) + 1;
+        } else {
+          counter.textContent = parseInt(counter.textContent) - 1;
+        }
+      });
     });
   </script>
 </body>
