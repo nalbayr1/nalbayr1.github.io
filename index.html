@@ -4,8 +4,6 @@
   <title>My Portfolio</title>
   <style>
     /* Global Styles */
-
-    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -105,7 +103,7 @@
     .project p {
       color: #777;
     }
-    .project button {
+    .project .like-button {
       display: inline-block;
       background-color: #333;
       color: #fff;
@@ -115,48 +113,74 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-    }
-    <style>
-    /* ... your existing styles ... */
-    .project .like-button.liked {
-        background-color: #f44336;
-    }
-    
-</style>
-    .project button:hover {
-      background-color: #555;
-    }
-
-    <style>
-
-    /* ... your existing styles ... */
-    .project .like-button {
-        display: inline-block;
-        background-color: #333;
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-left: 10px;
+      margin-left: 10px;
     }
     .project .like-button:hover {
-        background-color: #555;
+      background-color: #555;
     }
-</style>
+    .project .like-button.liked {
+      background-color: #f44336;
+    }
+    .project .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .project .image-container img {
+      margin: 0 10px;
+      max-width: 200px;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
 
-
-
-    
+    /* Slideshow Styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+    .slide {
+      display: none;
+      max-width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="header">
       <h1>Nahuel Albayrak</h1>
-      <p>Current Full Time Student</p>
+      <p>Current Full-Time Student</p>
       <p>Studying Computer Science</p>
     </header>
     <nav class="navigation">
@@ -199,13 +223,13 @@
         <h3>Skills</h3>
         <p>Programming Skills: C, C++, Python, Java</p>
         <p>Technologies: Github, Docker, TensorFlow, OpenCV, NetworkX</p>
-        <p>Communication: Collaborated in professional projects, took public speaking classes, and presented research</p>
+        <p>Communication: Collaborated on professional projects, took public speaking classes, and presented research</p>
       </div>
       <div class="fun-facts">
         <h3>Research Publications/Conferences</h3>
         <p>2021 Physical Review: "Quantifying local rearrangements in three-dimensional granular materials"</p>
         <p>2020 IEEE Integrated STEM Education Conference (ISEC), Princeton University: "Object Detection and Machine Learning". Poster award. Abstract published at the IEEE archives.</p>
-        <p>Regional Science Fair (2015-2021): Participated every year. 2019 Encryption and Steganography, 2020 Object Detection and Machine Learning. Both 1st places in category Systems Software and awards from the Naval Research Laboratory and the Armed Forces Communications and Electronics Association.</p>
+        <p>Regional Science Fair (2015-2021): Participated every year. 2019 Encryption and Steganography, 2020 Object Detection and Machine Learning. Both 1st places in the category Systems Software and awards from the Naval Research Laboratory and the Armed Forces Communications and Electronics Association.</p>
       </div>
       <div class="fun-facts">
         <h3>Other Activities</h3>
@@ -221,29 +245,91 @@
       <h2>Projects</h2>
       <div class="project">
         <h3>Project 1</h3>
-        <p><a href="https://www.linkedin.com/in/nahuel-albayrak-0356bb254/" target="_blank">link to offical publication</a></p>
-        <a href="project1.html" target="_blank"><button>View Project 1</button></a>
-        <button class="like-button">Like</button>
+        <div class="project-description">
+          <p>Social Media app that allows users to view data and communicate with each other</p>
+          <div class="bullet-points">
+            <h4>Motivation</h4>
+            <ul>
+              <li>Better gauge of performance in armor ceramics</li>
+              <li>Projectile depth affected by rapid granular flow</li>
+              <li>Understand rearrangement of particles in a rapid granular flow</li>
+              <li>Analyze force networks at different time steps</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slideshow-container">
+          <div class="slide">
+            <img src="photo4.png" alt="Photo 4">
+          </div>
+          <div class="slide">
+            <img src="photo1.png" alt="Photo 1">
+          </div>
+          <div class="slide">
+            <img src="photo2.png" alt="Photo 2">
+          </div>
+          <div class="slide">
+            <img src="photo3.png" alt="Photo 3">
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="abstract">
+            <h3>Abstract</h3>
+            <p>In order to better gauge performance in armor ceramics, we can study the granular flow of particles as a projectile makes impact.</p>
+            <p>Granular flow can affect a projectile's depth and final placement. As impact is made within the material, a comminuted zone is created.</p>
+            <p>This zone is the area in which we analyze force networks at different time steps. When studying temporal changes in force networks,</p>
+            <p>we are dealing with different nodes and edges carrying information such as location (x, y, z), contact forces, radi, etc. We are able</p>
+            <p>to label assortments of these nodes and edges based on the information they carry. Through the contact force magnitude found in edges</p>
+            <p>and angles created between triplets of nodes, we label them as either kinks (when the angle found between triplets is less than 135 degrees),</p>
+            <p>extensions (when the angle found between triplets is greater than or equal to 135 degrees), merges (a new edge is found between 2 nodes),</p>
+            <p>or disappearance (edge or node is no longer present). With this information, we hope to find correlations between the labels to better</p>
+            <p>understand particle rearrangement.</p>
+        </div>
       </div>
       <div class="project">
         <h3>Project 2</h3>
-        <p>Trading robot that uses AI to analyze markets to automatically purchase stocks.</p>
-        <a href="project2.html" target="_blank"><button>View Project 2</button></a>
-        <button class="like-button">Like</button>
+        <div class="project-description">
+          <p>E-commerce website for selling fashion accessories</p>
+          <div class="bullet-points">
+            <h4>Features</h4>
+            <ul>
+              <li>User registration and login</li>
+              <li>Product catalog with search functionality</li>
+              <li>Shopping cart and checkout process</li>
+              <li>Payment integration with Stripe</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </div>
-
   <script>
-    // Select all like buttons
-    const likeButtons = document.querySelectorAll('.like-button');
-  
-    // Add click event listener to each like button
-    likeButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('liked');
-      });
-    });
+    // Slide Show Script
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("slide");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
   </script>
 </body>
 </html>
